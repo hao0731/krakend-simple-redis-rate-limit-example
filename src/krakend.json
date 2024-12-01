@@ -1,0 +1,30 @@
+{
+  "$schema": "https://www.krakend.io/schema/v2.7/krakend.json",
+  "version": 3,
+  "plugin": {
+    "pattern": ".so",
+    "folder": "./plugins/server/redis-rate-limit"
+  },
+  "endpoints": [
+    {
+      "endpoint": "/api/todos",
+      "output_encoding": "no-op",
+      "backend": [
+        {
+          "host": ["https://jsonplaceholder.typicode.com"],
+          "url_pattern": "/todos",
+          "method": "GET",
+          "encoding": "no-op"
+        }
+      ]
+    }
+  ],
+  "extra_config": {
+    "plugin/http-server": {
+      "name": ["krakend-server-example"],
+      "krakend-server-example": {
+        "redis_host": "redis:6379"
+      }
+    }
+  }
+}
