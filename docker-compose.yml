@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  krakend:
+    image: devopsfaith/krakend:watch
+    volumes:
+      - ./src:/etc/krakend
+    ports:
+      - 8080:8080
+    command: ["run", "-d", "-c", "/etc/krakend/krakend.json"]
+  redis:
+    image: redis:6.2
+    hostname: redis
+    ports:
+      - 6379:6379
+    
