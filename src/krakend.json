@@ -21,8 +21,8 @@
   ],
   "extra_config": {
     "plugin/http-server": {
-      "name": ["krakend-server-example"],
-      "krakend-server-example": {
+      "name": ["redis-rate-limit"],
+      "redis-rate-limit": {
         "redis_host": "redis:6379"
       }
     }

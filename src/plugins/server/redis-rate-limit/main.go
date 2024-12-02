@@ -13,7 +13,7 @@ import (
 )
 
 // pluginName is the plugin name
-var pluginName = "krakend-server-example"
+var pluginName = "redis-rate-limit"
 
 // HandlerRegisterer is the symbol the plugin loader will try to load. It must implement the Registerer interface
 var HandlerRegisterer = registerer(pluginName)
